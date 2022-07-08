@@ -11,11 +11,12 @@ using UnityEditor;
 public class UIHandler : MonoBehaviour
 {
     public TMP_InputField nameText;
+    public TextMeshProUGUI bestScore;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        bestScore.text = "Best Score: " + DataManager.instance.highScoreName.ToString() + ": " + DataManager.instance.highScore.ToString();
     }
 
     // Update is called once per frame
