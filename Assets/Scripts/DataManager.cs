@@ -71,4 +71,11 @@ public class DataManager : MonoBehaviour
             highScore = data.score;
         }
     }
+
+    public void Reset()
+    {
+        highScoreName = "";
+        highScore = 0;
+        SaveScore();
+}
 }

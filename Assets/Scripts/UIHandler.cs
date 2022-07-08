@@ -17,6 +17,8 @@ public class UIHandler : MonoBehaviour
     void Start()
     {
         bestScore.text = "Best Score: " + DataManager.instance.highScoreName.ToString() + ": " + DataManager.instance.highScore.ToString();
+        if (DataManager.instance.playerName != null)
+            nameText.text = DataManager.instance.playerName.ToString();
     }
 
     // Update is called once per frame
@@ -33,6 +35,12 @@ public class UIHandler : MonoBehaviour
     public void Name()
     {
         DataManager.instance.playerName = nameText.text;
+    }
+
+    public void Reset()
+    {
+        DataManager.instance.Reset();
+        bestScore.text = "Best Score: " + DataManager.instance.highScoreName.ToString() + ": " + DataManager.instance.highScore.ToString();
     }
 
     public void Exit()
